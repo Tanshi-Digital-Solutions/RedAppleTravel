@@ -38,7 +38,7 @@ export default function AdminBlog() {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/posts");
+      const response = await axios.get("https://red-apple-g4d2.onrender.com/api/posts");
       setPosts(response.data.sort((a, b) => b.id - a.id)); // Sort by newest first
     } catch (error) {
       console.error("Error fetching posts:", error);
@@ -65,7 +65,7 @@ export default function AdminBlog() {
     if (image) formData.append("image", image);
 
     try {
-      await axios.post("http://localhost:5000/api/posts", formData);
+      await axios.post("https://red-apple-g4d2.onrender.com/api/posts", formData);
       await fetchPosts();
       setTitle("");
       setDescription("");
@@ -81,7 +81,7 @@ export default function AdminBlog() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${id}`);
+      await axios.delete(`https://red-apple-g4d2.onrender.com/api/posts${id}`);
       await fetchPosts();
     } catch (error) {
       console.error("Error deleting post:", error);
