@@ -81,7 +81,7 @@ export default function AdminBlog() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://red-apple-g4d2.onrender.com/api/posts${id}`);
+      await axios.delete(`https://red-apple-g4d2.onrender.com/api/posts/${id}`);
       await fetchPosts();
     } catch (error) {
       console.error("Error deleting post:", error);

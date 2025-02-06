@@ -19,7 +19,7 @@ if (!fs.existsSync(DATA_FILE)) {
 }
 
 // Image Upload Setup
-const upload = multer({ dest: path.join(__dirname, "../../public/uploads/") });
+const upload = multer({ dest: path.join(__dirname, "/uploads/") });
 
 // 📌 Get all blog posts
 app.get("/api/posts", async (req, res) => {
