@@ -15,7 +15,7 @@ export default function PublicBlog() {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/posts");
+      const response = await axios.get("https://red-apple-g4d2.onrender.com/api/posts");
       setPosts(response.data.sort((a, b) => b.id - a.id)); // Sort by newest first
     } catch (error) {
       console.error("Error fetching posts:", error);
