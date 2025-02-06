@@ -47,7 +47,7 @@ export default function AdminBlog() {
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
-    if (password === "admin123") {
+    if (password === "rEd@pple25") {
       setIsPasswordValid(true);
     } else {
       alert("Incorrect password");
@@ -90,168 +90,166 @@ export default function AdminBlog() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      <section>
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex justify-between items-center mb-12"
-        >
-          <h1 className="text-4xl font-bold text-gray-900">Blog Management</h1>
+  <Header />
+  <section>
+    <main className="max-w-7xl mx-auto px-6 py-12 mt-20">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex justify-between items-center mb-12"
+      >
+        <h1 className="text-4xl font-bold text-gray-900">Blog Management</h1>
+        
+        <Dialog>
+          <DialogTrigger asChild>
+            <button className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-red-700 transition-colors">
+              <Plus className="w-5 h-5" />
+              New Post
+            </button>
+          </DialogTrigger>
           
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-red-700 transition-colors">
-                <Plus className="w-5 h-5" />
-                New Post
-              </button>
-            </DialogTrigger>
-            
-            {!isPasswordValid ? (
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Enter Admin Password</DialogTitle>
-                </DialogHeader>
-                <form onSubmit={handlePasswordSubmit} className="space-y-4 mt-4">
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full p-3 border rounded-lg"
-                    required
-                  />
-                  <button className="w-full bg-red-600 text-white p-3 rounded-lg font-semibold">
-                    Continue
-                  </button>
-                </form>
-              </DialogContent>
-            ) : (
-              <DialogContent className="sm:max-w-xl">
-                <DialogHeader>
-                  <DialogTitle>Create New Post</DialogTitle>
-                </DialogHeader>
-                <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-                  <input
-                    type="text"
-                    placeholder="Title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="w-full p-3 border rounded-lg text-red-600 font-semibold text-lg"
-                    required
-                  />
-                  <textarea
-                    placeholder="Description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    className="w-full p-3 border rounded-lg min-h-[150px]"
-                    required
-                  />
-                  <div className="border-2 border-dashed rounded-lg p-4">
-                    <label className="flex flex-col items-center gap-2 cursor-pointer">
-                      <Upload className="w-6 h-6 text-gray-400" />
-                      <span className="text-sm text-gray-500">Upload Image (Optional)</span>
-                      <input
-                        type="file"
-                        accept="image/*"
-                        onChange={(e) => setImage(e.target.files[0])}
-                        className="hidden"
-                      />
-                    </label>
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="w-full bg-red-600 text-white p-3 rounded-lg font-semibold flex items-center justify-center gap-2"
-                  >
-                    {isLoading ? (
-                      <>
-                        <Loader className="w-5 h-5 animate-spin" />
-                        Publishing...
-                      </>
-                    ) : (
-                      'Publish Post'
-                    )}
-                  </button>
-                </form>
-              </DialogContent>
-            )}
-          </Dialog>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <AnimatePresence>
-            {posts.map((post, index) => (
-              <motion.div
-                key={post.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -50 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-sm overflow-hidden"
-              >
-                {post.image && (
-                  <div className="relative aspect-video cursor-pointer" onClick={() => setSelectedImage(post.image)}>
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover"
+          {!isPasswordValid ? (
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>Enter Admin Password</DialogTitle>
+              </DialogHeader>
+              <form onSubmit={handlePasswordSubmit} className="space-y-4 mt-4">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full p-3 border rounded-lg"
+                  required
+                />
+                <button className="w-full bg-red-600 text-white p-3 rounded-lg font-semibold">
+                  Continue
+                </button>
+              </form>
+            </DialogContent>
+          ) : (
+            <DialogContent className="sm:max-w-xl">
+              <DialogHeader>
+                <DialogTitle>Create New Post</DialogTitle>
+              </DialogHeader>
+              <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                <input
+                  type="text"
+                  placeholder="Title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  className="w-full p-3 border rounded-lg text-red-600 font-semibold text-lg"
+                  required
+                />
+                <textarea
+                  placeholder="Description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  className="w-full p-3 border rounded-lg min-h-[150px]"
+                  required
+                />
+                <div className="border-2 border-dashed rounded-lg p-4">
+                  <label className="flex flex-col items-center gap-2 cursor-pointer">
+                    <Upload className="w-6 h-6 text-gray-400" />
+                    <span className="text-sm text-gray-500">Upload Image (Optional)</span>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => setImage(e.target.files[0])}
+                      className="hidden"
                     />
-                  </div>
-                )}
-                <div className="p-6">
-                  <h2 className="text-2xl font-bold text-red-600 mb-4">{post.title}</h2>
-                  <p className="text-gray-600 mb-6">{post.description}</p>
-                  
-                  <AlertDialog>
-                    <AlertDialogTrigger asChild>
-                      <button className="text-red-600 font-semibold hover:text-red-700 transition-colors">
-                        Delete Post
-                      </button>
-                    </AlertDialogTrigger>
-                    <AlertDialogContent>
-                      <AlertDialogHeader>
-                        <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-                        <AlertDialogDescription>
-                          This action cannot be undone. This will permanently delete this blog post.
-                        </AlertDialogDescription>
-                      </AlertDialogHeader>
-                      <AlertDialogFooter>
-                        <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction onClick={() => handleDelete(post.id)}>
-                          Delete
-                        </AlertDialogAction>
-                      </AlertDialogFooter>
-                    </AlertDialogContent>
-                  </AlertDialog>
+                  </label>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-
-        {/* Image Preview Dialog */}
-        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-          <DialogContent className="max-w-4xl">
-            <div className="relative">
-              <img
-                src={selectedImage}
-                alt="Preview"
-                className="w-full h-full object-contain"
-              />
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-          </DialogContent>
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full bg-red-600 text-white p-3 rounded-lg font-semibold flex items-center justify-center gap-2"
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader className="w-5 h-5 animate-spin" />
+                      Publishing...
+                    </>
+                  ) : (
+                    'Publish Post'
+                  )}
+                </button>
+              </form>
+            </DialogContent>
+          )}
         </Dialog>
-      </main>
-      </section>
-      
-    </div>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        <AnimatePresence>
+          {posts.map((post, index) => (
+            <motion.div
+              key={post.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white rounded-xl shadow-sm overflow-hidden"
+            >
+              {post.image && (
+                <div className="relative aspect-video cursor-pointer" onClick={() => setSelectedImage(post.image)}>
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <h2 className="text-2xl font-bold text-red-600 mb-4">{post.title}</h2>
+                <p className="text-gray-600 mb-6">{post.description}</p>
+                
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <button className="text-red-600 font-semibold hover:text-red-700 transition-colors">
+                      Delete Post
+                    </button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This action cannot be undone. This will permanently delete this blog post.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction onClick={() => handleDelete(post.id)}>
+                        Delete
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl">
+          <div className="relative">
+            <img
+              src={selectedImage}
+              alt="Preview"
+              className="w-full h-full object-contain"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </main>
+  </section>
+</div>
   );
 }
