@@ -31,6 +31,7 @@ export default function AdminBlog() {
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [imageUploaded, setImageUploaded] = useState(false);
 
   useEffect(() => {
     fetchPosts();
@@ -38,7 +39,7 @@ export default function AdminBlog() {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("https://red-apple-g4d2.onrender.com/api/posts");
+const response = await axios.get("/api/posts");
       setPosts(response.data.sort((a, b) => b.id - a.id)); // Sort by newest first
     } catch (error) {
       console.error("Error fetching posts:", error);
@@ -47,7 +48,7 @@ export default function AdminBlog() {
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
-    if (password === "rEd@pple25") {
+    if (password === "Admin@2025") {
       setIsPasswordValid(true);
     } else {
       alert("Incorrect password");
@@ -65,11 +66,12 @@ export default function AdminBlog() {
     if (image) formData.append("image", image);
 
     try {
-      await axios.post("https://red-apple-g4d2.onrender.com/api/posts", formData);
+      await axios.post("/api/posts", formData);
       await fetchPosts();
       setTitle("");
       setDescription("");
       setImage(null);
+      setImageUploaded(false);
       setIsLoading(false);
       setIsPasswordValid(false);
       setPassword("");
@@ -81,7 +83,7 @@ export default function AdminBlog() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://red-apple-g4d2.onrender.com/api/posts/${id}`);
+      await axios.delete(`/api/posts/${id}`);
       await fetchPosts();
     } catch (error) {
       console.error("Error deleting post:", error);
@@ -102,7 +104,7 @@ export default function AdminBlog() {
         
         <Dialog>
           <DialogTrigger asChild>
-            <button className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-red-700 transition-colors">
+            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-blue-700 transition-colors">
               <Plus className="w-5 h-5" />
               New Post
             </button>
@@ -122,7 +124,7 @@ export default function AdminBlog() {
                   className="w-full p-3 border rounded-lg"
                   required
                 />
-                <button className="w-full bg-red-600 text-white p-3 rounded-lg font-semibold">
+                <button className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold">
                   Continue
                 </button>
               </form>
@@ -148,14 +150,25 @@ export default function AdminBlog() {
                   className="w-full p-3 border rounded-lg min-h-[150px]"
                   required
                 />
-                <div className="border-2 border-dashed rounded-lg p-4">
+                <div className={`border-2 border-dashed rounded-lg p-4 ${imageUploaded ? 'border-green-400 bg-green-50' : 'border-gray-300'}`}>
                   <label className="flex flex-col items-center gap-2 cursor-pointer">
-                    <Upload className="w-6 h-6 text-gray-400" />
-                    <span className="text-sm text-gray-500">Upload Image (Optional)</span>
+                    <Upload className={`w-6 h-6 ${imageUploaded ? 'text-green-600' : 'text-gray-400'}`} />
+                    {imageUploaded ? (
+                      <div className="text-center">
+                        <span className="text-sm text-green-600 font-medium">✓ Image uploaded successfully!</span>
+                        {image && <p className="text-xs text-gray-500 mt-1">{image.name}</p>}
+                      </div>
+                    ) : (
+                      <span className="text-sm text-gray-500">Upload Image (Optional)</span>
+                    )}
                     <input
                       type="file"
                       accept="image/*"
-                      onChange={(e) => setImage(e.target.files[0])}
+                      onChange={(e) => {
+                        const file = e.target.files[0];
+                        setImage(file);
+                        setImageUploaded(!!file);
+                      }}
                       className="hidden"
                     />
                   </label>
@@ -163,7 +176,7 @@ export default function AdminBlog() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-red-600 text-white p-3 rounded-lg font-semibold flex items-center justify-center gap-2"
+                  className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold flex items-center justify-center gap-2"
                 >
                   {isLoading ? (
                     <>
@@ -201,12 +214,12 @@ export default function AdminBlog() {
                 </div>
               )}
               <div className="p-6">
-                <h2 className="text-2xl font-bold text-red-600 mb-4">{post.title}</h2>
+                <h2 className="text-2xl font-bold text-blue-600 mb-4">{post.title}</h2>
                 <p className="text-gray-600 mb-6">{post.description}</p>
                 
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
-                    <button className="text-red-600 font-semibold hover:text-red-700 transition-colors">
+                    <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
                       Delete Post
                     </button>
                   </AlertDialogTrigger>

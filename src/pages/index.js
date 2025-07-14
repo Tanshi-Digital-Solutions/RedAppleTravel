@@ -77,19 +77,19 @@ export default function App() {
           className="relative mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:px-8 lg:py-56"
         >
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Red Apple Travel & Tours
+            Modern Business Solutions
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mb-8">
-            Your gateway to worldwide destinations. Experience seamless travel planning with our expert services.
+            Innovative solutions for your business needs. Experience excellence with our comprehensive services.
           </p>
           <div className="flex gap-4">
             <a href="#services" 
-               className="px-6 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transform hover:scale-105 transition duration-300">
+               className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition duration-300">
               Explore Services
             </a>
             <a href="#contact" 
-               className="px-6 py-3 bg-white text-red-600 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition duration-300">
+               className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition duration-300">
               Contact Us
             </a>
             <ul className="circles">
@@ -124,7 +124,7 @@ export default function App() {
                 whileInView={{ y: 0 }}
                 className="text-4xl font-bold text-gray-900"
               >
-                About Red Apple Travel & Tours
+                About Our Company
               </motion.h2>
               
               <motion.div
@@ -134,20 +134,20 @@ export default function App() {
                 className="space-y-6"
               >
                 <p className="text-lg text-gray-600">
-                  For over a decade, we've been transforming travel experiences through innovative solutions 
+                  For over a decade, we've been transforming business experiences through innovative solutions 
                   and personalized service. Our commitment to excellence has made us a trusted name in 
-                  Zambian tourism.
+                  modern business solutions.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-white p-6 rounded-xl shadow-sm">
                     <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                      <CheckCircle className="text-red-600" /> Our Mission
+                      <CheckCircle className="text-blue-600" /> Our Mission
                     </h3>
                     <ul className="space-y-3 text-gray-600">
-                      {['Prompt service delivery', 'Regular staff training', 'Competitive fares', 'Employee motivation programs'].map((item, index) => (
+                      {['Prompt service delivery', 'Regular staff training', 'Competitive pricing', 'Employee motivation programs'].map((item, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <span className="text-red-600">▹</span>
+                          <span className="text-blue-600">▹</span>
                           {item}
                         </li>
                       ))}
@@ -156,12 +156,12 @@ export default function App() {
 
                   <div className="bg-white p-6 rounded-xl shadow-sm">
                     <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                      <CheckCircle className="text-red-600" /> Our Vision
+                      <CheckCircle className="text-blue-600" /> Our Vision
                     </h3>
                     <ul className="space-y-3 text-gray-600">
-                      {['Leading travel operator in Zambia', 'Cutting-edge technology', 'Customer satisfaction focus', 'Innovative marketing strategies'].map((item, index) => (
+                      {['Leading business solutions provider', 'Cutting-edge technology', 'Customer satisfaction focus', 'Innovative marketing strategies'].map((item, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <span className="text-red-600">▹</span>
+                          <span className="text-blue-600">▹</span>
                           {item}
                         </li>
                       ))}
@@ -177,7 +177,7 @@ export default function App() {
               className="relative h-96 rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center"
             >
               {/* Image placeholder - Replace with actual image */}
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-transparent" />
               <img src="/travel-agent.jpeg" alt="Red Apple Logo"  />
             </motion.div>
           </motion.div>
@@ -193,7 +193,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl font-bold text-white mb-4"
             >
-              Comprehensive Travel Solutions
+              Comprehensive Business Solutions
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
@@ -215,7 +215,7 @@ export default function App() {
           className="bg-white rounded-xl p-6 hover:shadow-xl transition-shadow"
         >
           <div className="flex items-start gap-4">
-            <card.icon className="w-8 h-8 text-red-600 mt-1" />
+            <card.icon className="w-8 h-8 text-blue-600 mt-1" />
             <div>
               <h3 className="text-xl font-bold mb-2">{card.name}</h3>
               <p className="text-gray-600">{card.description}</p>
@@ -229,16 +229,16 @@ export default function App() {
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="mt-16 bg-red-600/10 p-8 rounded-xl border border-red-600/30"
+            className="mt-16 bg-blue-600/10 p-8 rounded-xl border border-blue-600/30"
           >
             <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Corporate Travel Management
-              </h3>
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Enterprise Solutions
+          </h3>
               <div className="grid md:grid-cols-2 gap-6 text-gray-300">
-                {['Tailored itineraries', 'Cost-effective solutions', '24/7 support', 'Volume discounts'].map((item, index) => (
+            {['Custom implementations', 'Scalable solutions', '24/7 support', 'Volume discounts'].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <CheckCircle className="w-5 h-5 text-blue-600" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -279,7 +279,7 @@ export default function App() {
                 whileInView={{ scale: 1 }}
                 className="bg-white p-8 rounded-xl text-center shadow-sm"
               >
-                <item.icon className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                <item.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.content}</p>
               </motion.div>
@@ -309,7 +309,7 @@ export default function App() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
               >
-                <item.icon className="w-12 h-12 text-red-600 mb-4" />
+                <item.icon className="w-12 h-12 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 {item.lines.map((line, i) => (
                   <p key={i} className="text-gray-600">{line}</p>

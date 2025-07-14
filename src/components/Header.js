@@ -20,8 +20,8 @@ export default function Header() {
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Red Apple Travel & Tours</span>
-            <img src="/Redlogo.png" alt="Red Apple Logo" className="h-8 w-auto" />
+            <span className="sr-only">Modern Business</span>
+            <div className="text-2xl font-bold text-green-500">GenericBiz</div>
           </Link>
         </div>
 
@@ -30,7 +30,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-indigo-300"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-blue-600"
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon className="h-6 w-6" />
@@ -40,14 +40,14 @@ export default function Header() {
         {/* Desktop Menu */}
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <Link key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-500 hover:text-indigo-400 transition duration-300">
+            <Link key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-700 hover:text-blue-600 transition duration-300">
               {item.name}
             </Link>
           ))}
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="/contact" className="text-sm font-semibold leading-6 text-gray-500 hover:text-indigo-400 transition duration-300">
+          <Link href="/contact" className="text-sm font-semibold leading-6 text-gray-700 hover:text-blue-600 transition duration-300">
             Contact Us <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
@@ -59,8 +59,8 @@ export default function Header() {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Red Apple Travel & Tours</span>
-              <img src="/Redlogo.png" alt="Red Apple Logo" className="h-10 w-auto" />
+              <span className="sr-only">Modern Business</span>
+              <div className="text-2xl font-bold text-green-500">GenericBiz</div>
             </Link>
             <button
               type="button"

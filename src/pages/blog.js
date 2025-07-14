@@ -15,7 +15,7 @@ export default function PublicBlog() {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("https://red-apple-g4d2.onrender.com/api/posts");
+const response = await axios.get("/api/posts");
       setPosts(response.data.sort((a, b) => b.id - a.id)); // Sort by newest first
     } catch (error) {
       console.error("Error fetching posts:", error);
@@ -39,11 +39,11 @@ export default function PublicBlog() {
           animate={{ opacity: 1, y: 0 }}
           className="relative mx-auto max-w-4xl px-6 py-24 text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-red-600 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-blue-600 mb-6">
             Our Journey & Stories
           </h1>
           <p className="text-xl text-white max-w-2xl mx-auto">
-            Explore our latest updates, insights, and travel experiences
+            Explore our latest updates, insights, and business innovations
           </p>
         </motion.div>
       </section>
@@ -117,7 +117,7 @@ export default function PublicBlog() {
                     viewport={{ once: true }}
                     className="p-8"
                   >
-                    <h2 className="text-3xl font-bold text-red-600 mb-6">{post.title}</h2>
+                    <h2 className="text-3xl font-bold text-blue-600 mb-6">{post.title}</h2>
                     <p className="text-gray-600 text-lg leading-relaxed whitespace-pre-wrap">
                       {post.description}
                     </p>

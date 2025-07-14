@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Red Apple Travel & Tours",
-  description: "Official Red Apple Travel website",
+  title: "Modern Business Template",
+  description: "A modern, responsive business website template built with Next.js",
 };
 
 export default function RootLayout({ children }) {

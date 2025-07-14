@@ -96,11 +96,11 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="relative mx-auto max-w-7xl px-6 py-24 text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-red-600 mb-6">
-            Next-Generation Travel Experts
+          <h1 className="text-4xl md:text-6xl font-bold text-purple-600 mb-6">
+            Next-Generation Business Solutions
           </h1>
           <p className="text-xl text-white max-w-2xl mx-auto">
-            Fresh energy meets decades of experience - delivering seamless journeys across Africa and beyond
+            Fresh energy meets decades of experience - delivering seamless business solutions across industries
           </p>
         </motion.div>
       </section>
@@ -134,7 +134,7 @@ export default function Services() {
       <motion.section 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="py-24 bg-red-600 text-white"
+      className="py-24 bg-purple-600 text-white"
       >
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center">Why Choose Us</h2>
@@ -200,7 +200,7 @@ export default function Services() {
                 whileInView={{ scale: 1 }}
                 className="p-6 bg-white rounded-xl shadow-lg"
               >
-                <div className="text-4xl font-bold text-red-600 mb-2">{stat.number}</div>
+                <div className="text-4xl font-bold text-purple-600 mb-2">{stat.number}</div>
                 <div className="text-gray-900">{stat.label}</div>
               </motion.div>
             ))}

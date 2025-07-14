@@ -90,7 +90,7 @@ export default function Contact() {
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-white">Get in Touch with Us</h2>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                Ready for your next trip? Get in touch with us now.
+                Ready to enhance your business? Get in touch with us now.
               </p>
               <dl className="mt-10 space-y-4 text-base leading-7 text-gray-300">
                 <div className="flex gap-x-4">
@@ -99,8 +99,8 @@ export default function Contact() {
                     <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                   </dt>
                   <dd>
-                    <a href="mailto:reservations@redappletravel.com" className="hover:text-white">
-                    reservations@redappletravel.com
+                    <a href="mailto:info@genericbiz.com" className="hover:text-white">
+                    info@genericbiz.com
                     </a>
                   </dd>
                 </div>
@@ -110,8 +110,8 @@ export default function Contact() {
                     <PhoneIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                   </dt>
                   <dd>
-                    <a href="tel:+260978807128" className="hover:text-white">
-                      +260978807128 (WhatsApp)
+                    <a href="tel:+1234567890" className="hover:text-white">
+                      +1234567890 (Phone)
                     </a>
                   </dd>
                 </div>
@@ -217,8 +217,8 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status.loading}
-                  className={`rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ${
-                    status.loading ? 'bg-indigo-400' : 'bg-indigo-500 hover:bg-indigo-400'
+                  className={`rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 ${
+                    status.loading ? 'bg-green-400' : 'bg-green-500 hover:bg-green-400'
                   }`}
                 >
                   {status.loading ? 'Sending...' : 'Send message'}
